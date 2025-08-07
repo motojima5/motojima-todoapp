@@ -1,0 +1,20 @@
+@import 'variables';
+@import 'authentication';
+@import 'buttons';
+@import 'form';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-size: 1em;
+}
+
+.container {
+  padding: 32px 26px;
+}

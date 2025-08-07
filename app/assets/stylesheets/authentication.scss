@@ -1,0 +1,21 @@
+.auth__title {
+  font-size: 26px;
+  margin-bottom: 33px;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 82svh;
+}
+
+.field {
+  &.email {
+    margin-bottom: 33px;
+  }
+
+  &.password {
+    margin-bottom: 16px;
+  }
+}

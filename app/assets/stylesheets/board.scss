@@ -1,0 +1,39 @@
+.title {
+  margin-bottom: 35px;
+  font-size: 26px;
+}
+
+.board {
+  margin-bottom: 26px;
+  padding: 32px 16px 20px 17px;
+  background: #F4F4F4;
+  border-radius: 10px;
+
+  &_content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 29px;
+  }
+
+  &_name {
+    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  &_description {
+    font-size: 14px;
+  }
+
+  &_avatar img {
+    width: 30px;
+  }
+}
+
+.add-board {
+  display: block;
+  padding: 68px 109px 69px;
+  text-align: center;
+  border: 1px dashed rgba($color: #000000, $alpha: 0.2);
+  border-radius: 10px;
+}

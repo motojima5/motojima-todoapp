@@ -13,15 +13,17 @@
               <%= board.description %>
             </p>
           </div>
-          <div class="board_content_actions">
-            <div class="dropdown">
-              <%= image_tag 'actions.svg', class: 'dropbtn' %>
-              <div class="dropdown-content mini">
-                <a href="#">Edit</a>
-                <a href="#">Delete</a>
+          <% if user_signed_in? && current_user.has_written?(board) %>
+            <div class="board_content_actions">
+              <div class="dropdown">
+                <%= image_tag 'actions.svg', class: 'dropbtn' %>
+                <div class="dropdown-content mini">
+                  <a href="#">Edit</a>
+                  <a href="#">Delete</a>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         </div>
         <div class="board_avatar">
           <%= image_tag 'user.png' %>

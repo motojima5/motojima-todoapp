@@ -1,26 +1,32 @@
 <div class="container-board">
   <h1 class="title">All Boards</h1>
 
-  <div class="board">
-    <div class="board_content">
-      <div class="board_detail">
-        <h2 class="board_name">Brackets</h2>
-        <p class="board_description">Saving money – is something we would all like.</p>
-      </div>
-      <div class="board_content_actions">
-        <div class="dropdown">
-          <%= image_tag 'actions.svg', class: 'dropbtn' %>
-          <div class="dropdown-content mini">
-            <a href="#">Edit</a>
-            <a href="#">Delete</a>
+  <% @boards.each do |board| %>
+    <div class="board">
+      <div class="board_content">
+        <div class="board_detail">
+          <h2 class="board_name">
+            <%= board.name %>
+          </h2>
+          <p class="board_description">
+            <%= board.description %>
+          </p>
+        </div>
+        <div class="board_content_actions">
+          <div class="dropdown">
+            <%= image_tag 'actions.svg', class: 'dropbtn' %>
+            <div class="dropdown-content mini">
+              <a href="#">Edit</a>
+              <a href="#">Delete</a>
+            </div>
           </div>
         </div>
       </div>
+      <div class="board_avatar">
+        <%= image_tag 'user.png' %>
+      </div>
     </div>
-    <div class="board_avatar">
-      <%= image_tag 'user.png' %>
-    </div>
-  </div>
+  <% end %>
 
   <%= link_to new_board_path, class: 'add-board' do %>
     + Add new board

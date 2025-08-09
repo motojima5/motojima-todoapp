@@ -1,6 +1,12 @@
 <div class="container">
   <h1 class="title">New Board</h1>
 
+  <ul>
+    <% @board.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+
   <%= form_with(model: @board, url: boards_path, method: 'post', local: true, html: { class: 'form' } ) do |f| %>
     <div class="box">
       <div>

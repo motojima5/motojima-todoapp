@@ -9,6 +9,12 @@ class BoardsController < ApplicationController
   end
 
   def create
+    @board = Board.new(board_params)
+    if @board.save
+      redirect_to board_path(@board)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -18,5 +24,10 @@ class BoardsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def board_params
+    params.require(:article).permit(:name, :description)
   end
 end

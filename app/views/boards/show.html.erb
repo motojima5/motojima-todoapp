@@ -1,1 +1,26 @@
-<p>SHOW</p>
+<div class="container-board">
+  <h1 class="title">
+    <%= @board.name %>
+  </h1>
+
+  <div class="task">
+    <div class="task_content">
+      <h2 class="task_name">Home business advertising ideas</h2>
+      <p class="task_description">Old fashioned recipe for preventing allergies and chemical sensitivities</p>
+    </div>
+    <div class="task_detail">
+      <div class="task_avatar">
+        <%= image_tag 'user.png' %>
+      </div>
+
+      <div class="task_comment">
+        <span>23</span>
+        <%= image_tag 'message.svg' %>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to new_board_path, class: 'add-board' do %>
+    + Add new card
+  <% end %>
+</div>

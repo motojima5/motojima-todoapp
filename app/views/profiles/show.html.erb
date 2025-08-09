@@ -6,13 +6,15 @@
     <div class="profilePage_user_basicInfo">
       <div class="profilePage_user_name">
         <div class="profilePage_user_displayName">
-          <%= current_user.display_name %>
+          <%= current_user.display_name %>(<%= current_user.birthday %>・<%= current_user.gender %>)
         </div>
         <div class="profilePage_user_actionButton">
           <%= link_to 'Edit', edit_profile_path %>
         </div>
       </div>
-      <div class="profilePage_user_introduction">aaaaaaaaaaa</div>
+      <div class="profilePage_user_introduction">
+        <%= current_user.profile&.introduction %>
+      </div>
     </div>
   </div>
 </div>

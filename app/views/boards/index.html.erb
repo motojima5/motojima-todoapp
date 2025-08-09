@@ -11,8 +11,8 @@
         <div class="dropdown">
           <%= image_tag 'actions.svg', class: 'dropbtn' %>
           <div class="dropdown-content mini">
-            <a href="#">編集する</a>
-            <a href="#">削除する</a>
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <a class="add-board" href="#">
+  <%= link_to new_board_path, class: 'add-board' do %>
     + Add new board
-  </a>
+  <% end %>
 </div>

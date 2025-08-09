@@ -12,3 +12,14 @@ input {
 label {
   font-size: 18px;
 }
+
+textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px 8px;
+  min-height: 203px;
+  resize: vertical;
+  background: #F4F4F4;
+  border: none;
+  border-radius: 10px;
+}

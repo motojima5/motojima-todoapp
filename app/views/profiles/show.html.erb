@@ -6,7 +6,7 @@
     <div class="profilePage_user_basicInfo">
       <div class="profilePage_user_name">
         <div class="profilePage_user_displayName">
-          <%= current_user.display_name %>(<%= current_user.age %>・<%= current_user.gender %>)
+          <%= current_user.display_name %>(<%= current_user.age %>・<%= I18n.t("enum.genders.#{current_user.gender}") %>)
         </div>
         <div class="profilePage_user_actionButton">
           <%= link_to 'Edit', edit_profile_path %>

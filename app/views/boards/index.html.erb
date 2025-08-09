@@ -32,7 +32,9 @@
     <% end %>
   <% end %>
 
-  <%= link_to new_board_path, class: 'add-board' do %>
-    + Add new board
+  <% if user_signed_in? %>
+    <%= link_to new_board_path, class: 'add-board' do %>
+      + Add new board
+    <% end %>
   <% end %>
 </div>

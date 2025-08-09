@@ -19,7 +19,7 @@
                 <%= image_tag 'actions.svg', class: 'dropbtn' %>
                 <div class="dropdown-content mini">
                   <%= link_to 'Edit', edit_board_path(board) %>
-                  <a href="#">Delete</a>
+                  <%= link_to 'Delete', board_path(board), data: { turbo_method: 'delete', turbo_confirm: '本当に削除してもよろしいですか？' } %>
                 </div>
               </div>
             </div>

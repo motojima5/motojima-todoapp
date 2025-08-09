@@ -2,6 +2,7 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create, :edit, :update, :destroy ]
 
   def index
+    @boards = Board.all
   end
 
   def new
@@ -16,6 +17,10 @@ class BoardsController < ApplicationController
       flash.now[:error] = "保存に失敗しました"
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @board = Board.find(params[:id])
   end
 
   def edit

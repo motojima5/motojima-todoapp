@@ -1,0 +1,32 @@
+.task {
+  margin-bottom: 24px;
+  padding: 15px 16px;
+  background: #F4F4F4;
+  border-radius: 10px;
+
+  &_content {
+    margin-bottom: 36px;
+  }
+
+  &_name {
+    margin-bottom: 9px;
+    font-size: 18px;
+  }
+
+  &_description {
+    font-size: 18px;
+  }
+
+  &_detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_avatar img {
+    display: block;
+    width: 30px;
+  }
+
+  // &_comment {}
+}

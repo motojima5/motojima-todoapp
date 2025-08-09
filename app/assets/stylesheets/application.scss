@@ -4,6 +4,7 @@
 @import 'flash';
 @import 'authentication';
 @import 'board';
+@import 'task';
 @import 'buttons';
 @import 'form';
 
@@ -21,7 +22,7 @@ body {
 
 a {
   text-decoration: none;
-  // color: #000;
+  color: inherit;
 }
 
 .container {

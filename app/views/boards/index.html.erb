@@ -2,30 +2,32 @@
   <h1 class="title">All Boards</h1>
 
   <% @boards.each do |board| %>
-    <div class="board">
-      <div class="board_content">
-        <div class="board_detail">
-          <h2 class="board_name">
-            <%= board.name %>
-          </h2>
-          <p class="board_description">
-            <%= board.description %>
-          </p>
-        </div>
-        <div class="board_content_actions">
-          <div class="dropdown">
-            <%= image_tag 'actions.svg', class: 'dropbtn' %>
-            <div class="dropdown-content mini">
-              <a href="#">Edit</a>
-              <a href="#">Delete</a>
+    <%= link_to board_path(board) do %>
+      <div class="board">
+        <div class="board_content">
+          <div class="board_detail">
+            <h2 class="board_name">
+              <%= board.name %>
+            </h2>
+            <p class="board_description">
+              <%= board.description %>
+            </p>
+          </div>
+          <div class="board_content_actions">
+            <div class="dropdown">
+              <%= image_tag 'actions.svg', class: 'dropbtn' %>
+              <div class="dropdown-content mini">
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </div>
             </div>
           </div>
         </div>
+        <div class="board_avatar">
+          <%= image_tag 'user.png' %>
+        </div>
       </div>
-      <div class="board_avatar">
-        <%= image_tag 'user.png' %>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 
   <%= link_to new_board_path, class: 'add-board' do %>

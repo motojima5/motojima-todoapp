@@ -14,7 +14,7 @@ class User < ApplicationRecord
   end
 
   def display_name
-    profile&.nickname || self.email.split('@').first
+    profile&.nickname || self.email.split("@").first
   end
 
   def prepare_profile
@@ -25,7 +25,7 @@ class User < ApplicationRecord
     if profile&.avatar&.attached?
       profile.avatar
     else
-      ''
+      ""
     end
   end
 end

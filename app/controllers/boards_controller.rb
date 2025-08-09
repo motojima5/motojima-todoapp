@@ -28,6 +28,13 @@ class BoardsController < ApplicationController
   end
 
   def update
+    @board = Board.find(params[:id])
+    if @board.update(board_params)
+      redirect_to root_path, notice: "更新できました"
+    else
+      flash.now[:error] = "更新できませんでした"
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy

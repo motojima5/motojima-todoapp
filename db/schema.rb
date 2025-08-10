@@ -65,13 +65,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_09_095035) do
 
   create_table "tasks", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "board_id", null: false
     t.string "title", null: false
     t.text "content", null: false
     t.datetime "due_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["board_id"], name: "index_tasks_on_board_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 

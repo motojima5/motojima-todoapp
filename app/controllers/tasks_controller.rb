@@ -1,14 +1,16 @@
 class TasksController < ApplicationController
   def new
-    @task = current_user.tasks.build
+    board = Board.find(params[:board_id])
+    @task = board.tasks.build
   end
 
   def create
-    @task = current_user.tasks.build(task_params)
+    board = Board.find(params[:id])
+    @task = board.tasks.build(task_params)
     if @task.save
-      redirect_to task_path(@task), notice: "保存できたよ"
+      redirect_to task_path(board), notice: "タスクを追加"
     else
-      flash.now[:error] = "保存に失敗しました"
+      flash.now[:error] = "更新できませんでした"
       render :new, status: :unprocessable_entity
     end
   end

@@ -5,12 +5,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    board = Board.find(params[:id])
-    @task = board.tasks.build(task_params)
+    @task = current_user.tasks.build(task_params)
+    @task.board = Board.find(params[:board_id])
     if @task.save
-      redirect_to task_path(board), notice: "タスクを追加"
+      redirect_to board_path(@task.board), notice: "保存できたよ"
     else
-      flash.now[:error] = "更新できませんでした"
+      flash.now[:error] = "保存に失敗しました"
       render :new, status: :unprocessable_entity
     end
   end

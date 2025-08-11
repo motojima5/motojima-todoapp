@@ -18,6 +18,10 @@
         <div class="task_detail">
           <div class="task_avatar">
             <%= image_tag task.user.avatar_image %>
+
+            <% task.unique_commenter_avatar_images.each do |avatar| %>
+              <%= image_tag avatar %>
+            <% end %>
           </div>
 
           <div class="task_comment">

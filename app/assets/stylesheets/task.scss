@@ -31,9 +31,17 @@
     align-items: center;
   }
 
-  &_avatar img {
-    display: block;
-    width: 30px;
+  &_avatar {
+    position: relative;
+
+    img {
+      width: 30px;
+
+      &:nth-of-type(n + 2) {
+        position: absolute;
+        left: 17px;
+      }
+    }
   }
 }
 

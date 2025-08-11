@@ -10,6 +10,12 @@
     margin-bottom: 36px;
   }
 
+  &_image {
+    & img {
+      width: 100%;
+    }
+  }
+
   &_name {
     margin-bottom: 9px;
     font-size: 18px;
@@ -40,6 +46,14 @@
 
   &_title {
     font-size: $font-title;
+  }
+
+  &_image {
+    margin-bottom: 35px;
+
+    & img {
+      width: 100%;
+    }
   }
 
   &_text {

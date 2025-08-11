@@ -3,7 +3,7 @@
     <h1 class="taskPage_title">
       <%= @task.title %>
     </h1>
-    <% if user_signed_in? && current_user.has_written?(@task) %>
+    <% if user_signed_in? && current_user.has_written?(@task.board) %>
       <div class="taskPage_actions">
         <div class="dropdown">
           <%= image_tag 'actions.svg', class: 'dropbtn' %>

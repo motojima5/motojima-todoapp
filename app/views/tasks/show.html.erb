@@ -40,5 +40,7 @@
     <p class="comment_text">Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc</p>
   </div>
 
-  <div class="comment_add">+ Add new comment</div>
+  <%= link_to new_board_task_comment_path(@task.board ,@task) do %>
+    <div class="comment_add">+ Add new comment</div>
+  <% end %>
 </div>

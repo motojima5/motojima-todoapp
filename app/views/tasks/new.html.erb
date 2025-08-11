@@ -10,6 +10,12 @@
   <%= form_with(model: @task, url: board_tasks_path(@task.board), method: 'post', local: true, html: { class: 'form' } ) do |f| %>
     <div class="box">
       <div>
+        <%= f.label :eyecatch, 'アイキャッチ' %>
+      </div>
+      <div>
+        <%= f.file_field :eyecatch %>
+      </div>
+      <div>
         <%= f.label :title %>
       </div>
       <div>

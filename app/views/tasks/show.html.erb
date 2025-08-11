@@ -16,6 +16,10 @@
     <% end %>
   </div>
 
+  <% if @task.eyecatch.attached? %>
+    <%= image_tag @task.eyecatch %>
+  <% end %>
+
   <p class="taskPage_text">
     <%= @task.content %>
   </p>

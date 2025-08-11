@@ -7,6 +7,9 @@
     <%= link_to board_task_path(@board, task) do %>
       <div class="task">
         <div class="task_content">
+          <% if task.eyecatch.attached? %>
+            <%= image_tag task.eyecatch %>
+          <% end %>
           <h2 class="task_name"><%= task.title %></h2>
           <p class="task_description"><%= task.content %></p>
         </div>

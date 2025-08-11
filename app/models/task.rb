@@ -10,4 +10,8 @@ class Task < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :user
   belongs_to :board
+
+  def comment_count
+    comments.count
+  end
 end

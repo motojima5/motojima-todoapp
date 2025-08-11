@@ -12,7 +12,7 @@ class Task < ApplicationRecord
   belongs_to :board
 
   def unique_commenter_avatar_images
-    displayed_user_ids = [user_id]
+    displayed_user_ids = [ user_id ]
 
     comments.map do |comment|
       unless displayed_user_ids.include?(comment.user_id)

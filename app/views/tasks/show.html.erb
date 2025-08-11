@@ -1,1 +1,42 @@
-<p>NEW</p>
+<div class="container taskPage">
+  <div class="taskPage_box">
+    <h1 class="taskPage_title">
+      <%= @task.title %>
+    </h1>
+    <% if user_signed_in? && current_user.has_written?(@task) %>
+      <div class="taskPage_actions">
+        <div class="dropdown">
+          <%= image_tag 'actions.svg', class: 'dropbtn' %>
+          <div class="dropdown-content mini">
+            <%= link_to 'Edit', edit_board_task_path(@task) %>
+            <%= link_to 'Delete', board_task_path(@task), data: { turbo_method: 'delete', turbo_confirm: '本当に削除してもよろしいですか？' } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if @task.eyecatch.attached? %>
+    <%= image_tag @task.eyecatch %>
+  <% end %>
+
+  <p class="taskPage_text">
+    <%= @task.content %>
+  </p>
+</div>
+
+<div class="container comment">
+  <h2 class="comment_title">Comment</h2>
+
+  <div class="comment_content">
+    <%= image_tag 'user-1.png' %>
+    <p class="comment_text">Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc</p>
+  </div>
+
+  <div class="comment_content">
+    <%= image_tag 'user-2.png' %>
+    <p class="comment_text">Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc</p>
+  </div>
+
+  <div class="comment_add">+ Add new comment</div>
+</div>

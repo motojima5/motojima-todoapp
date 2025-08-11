@@ -1,0 +1,33 @@
+@import './variables';
+
+.comment {
+  &.container {
+    padding-top: 0;
+  }
+
+  &_title {
+    margin-bottom: 25px;
+    font-size: $font-title;
+    font-weight: 400;
+  }
+
+  &_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+
+    & img {
+      width: 40px;
+    }
+
+  }
+
+  &_add {
+    padding: 20px;
+    text-align: center;
+    border: 1px dashed #000;
+    border-radius: 10px;
+  }
+}

@@ -1,3 +1,4 @@
+# require 'byebug'
 class BoardsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create, :edit, :update, :destroy ]
 
@@ -21,6 +22,8 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @tasks = @board.tasks
+    # byebug
   end
 
   def edit

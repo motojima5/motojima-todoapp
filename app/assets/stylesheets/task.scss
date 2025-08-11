@@ -1,3 +1,5 @@
+@import './variables';
+
 .task {
   margin-bottom: 24px;
   padding: 15px 16px;
@@ -27,6 +29,22 @@
     display: block;
     width: 30px;
   }
+}
 
-  // &_comment {}
+.taskPage {
+  &_box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &_title {
+    font-size: $font-title;
+  }
+
+  &_text {
+    padding: 20px 16px 26px 15px;
+    background: #F4F4F4;
+    border-radius: 10px;
+  }
 }

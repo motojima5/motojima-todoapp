@@ -27,7 +27,8 @@ class User < ApplicationRecord
     if profile&.avatar&.attached?
       profile.avatar
     else
-      ""
+      "user-1.png"
+      # nil
     end
   end
 end

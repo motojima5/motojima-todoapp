@@ -1,1 +1,42 @@
-<p>EDIT</p>
+<div class="container">
+  <h1 class="title">Edit Card</h1>
+
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+
+  <%= form_with(model: @task, url: board_task_path(@task.board), method: 'put', local: true, html: { class: 'form' } ) do |f| %>
+    <div class="box">
+      <div>
+        <%= f.label :eyecatch, 'アイキャッチ' %>
+      </div>
+      <div>
+        <%= f.file_field :eyecatch %>
+      </div>
+      <div>
+        <%= f.label :title %>
+      </div>
+      <div>
+        <%= f.text_field :title, class: 'text' %>
+      </div>
+      <div>
+        <%= f.label :content %>
+      </div>
+      <div>
+        <%= f.text_area :content %>
+      </div>
+      <div>
+        <%= f.label :due_at %>
+      </div>
+      <div>
+        <%= f.datetime_local_field :due_at, class: 'text' %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit', class: 'btn-primary' %>
+    </div>
+  <% end %>
+</div>

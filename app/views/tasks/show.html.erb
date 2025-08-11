@@ -1,1 +1,28 @@
-<p>NEW</p>
+<div class="container taskPage">
+  <div class="taskPage_box">
+    <h1 class="taskPage_title">
+      <%= @task.title %>
+    </h1>
+    <%= image_tag 'actions.svg' %>
+  </div>
+
+  <p class="taskPage_text">
+    <%= @task.content %>
+  </p>
+</div>
+
+<div class="container comment">
+  <h2 class="comment_title">Comment</h2>
+
+  <div class="comment_content">
+    <%= image_tag 'user-1.png' %>
+    <p class="comment_text">Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc</p>
+  </div>
+
+  <div class="comment_content">
+    <%= image_tag 'user-2.png' %>
+    <p class="comment_text">Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc</p>
+  </div>
+
+  <div class="comment_add">+ Add new comment</div>
+</div>
